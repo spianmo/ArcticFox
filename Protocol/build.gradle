@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2021
+ * @Project:Freya
+ * @Author:Finger
+ * @FileName:build.gradle
+ * @LastModified:2021-07-28T02:57:57.989+08:00
+ */
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+    ndkVersion "16.1.4479499"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            moduleName "libHostConf"
+            abiFilters "armeabi-v7a",'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-26','-DANDROID_STL=c++_static',
+                        '-DANDROID_TOOLCHAIN=clang'
+                abiFilters "armeabi-v7a",'arm64-v8a'
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+repositories {
+    mavenCentral()
+}

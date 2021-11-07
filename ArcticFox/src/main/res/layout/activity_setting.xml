@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.H5Activity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="设置"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="?attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.SettingActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_user"
+                style="@style/SettingsGroup"
+                android:layout_marginBottom="16dp"
+                android:text="用户设置"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.awolity.settingviews.ButtonSetting
+                android:id="@+id/btn_account_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user"
+                app:sv_descriptionText="系统固定1个账号可同时登录1台设备，使用此功能可创建多个子用户共享主号流量，以便登录多台设备"
+                app:sv_iconDrawableResource="@drawable/ic_baseline_supervisor_account_24"
+                app:sv_titleText="创建子账户" />
+
+            <com.awolity.settingviews.ButtonSetting
+                android:id="@+id/btn_account_node"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_account_share"
+                app:sv_descriptionText="当前服务器节点: "
+                app:sv_iconDrawableResource="@drawable/ic_baseline_miscellaneous_services_24"
+                app:sv_titleText="服务器负载节点" />
+
+            <com.awolity.settingviews.ButtonSetting
+                android:id="@+id/btn_exit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_account_node"
+                app:sv_descriptionText="您可以在此安全退出Mango账户"
+                app:sv_iconDrawableResource="@drawable/ic_baseline_exit_to_app_24"
+                app:sv_titleText="退出登录" />
+
+
+            <View
+                android:id="@+id/divider_1"
+                style="@style/SettingGroupDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_exit" />
+
+            <TextView
+                android:id="@+id/tv_preferences"
+                style="@style/SettingsGroup"
+                android:text="连接设置"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+            <com.awolity.settingviews.ButtonSetting
+                android:id="@+id/btn_line_clear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_preferences"
+                app:sv_descriptionText="清除缓存在磁盘的线路配置以及X509证书，如遇线路配置文件损坏或需删除线路可使用此功能"
+                app:sv_iconDrawableResource="@drawable/ic_baseline_clear_all_24"
+                app:sv_titleText="清除线路缓存" />
+
+            <com.awolity.settingviews.SwitchSetting
+                android:id="@+id/btn_show_log"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_line_clear"
+                app:sv_descriptionText="首页连接视图背景显示VPN连接的流式日志，极客专属。"
+                app:sv_iconDrawableResource="@drawable/ic_baseline_logo_dev_24"
+                app:sv_titleText="日志流式背景" />
+
+            <com.awolity.settingviews.SwitchSetting
+                android:id="@+id/btn_graph_logarithm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_show_log"
+                app:sv_descriptionText="连接视图的NetGraph启用对数弹性计算，可能会造成Garph视图状态丢失"
+                app:sv_iconDrawableResource="@drawable/ic_baseline_science_24"
+                app:sv_titleText="实时NetGraph对数计算" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

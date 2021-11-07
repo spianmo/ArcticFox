@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021
+  ~ @Project:Freya
+  ~ @Author:Finger
+  ~ @FileName:AndroidManifest.xml
+  ~ @LastModified:2021-03-29T17:11:05.171+08:00
+  -->
+
+<manifest
+    package="com.kirshi.protocol">
+
+</manifest>
