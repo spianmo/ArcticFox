@@ -11,7 +11,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -95,7 +95,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.kirito.basic'
                 artifactId = 'ArcticFox'
-                version = '1.0.2'
+                version = '1.0.4'
             }
             // Creates a Maven publication called “debug”.
             debug(MavenPublication) {
@@ -104,7 +104,7 @@ afterEvaluate {
 
                 groupId = 'com.kirito.basic'
                 artifactId = 'ArcticFox-debug'
-                version = '1.0.2'
+                version = '1.0.4'
             }
         }
     }
