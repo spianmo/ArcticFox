@@ -32,7 +32,7 @@ execute_process(
 set(CMAKE_C_COMPILER ${LLVM_OBFUSCATOR_PATH}/bin/clang${EXE_SUFFIX})
 set(CMAKE_CXX_COMPILER ${LLVM_OBFUSCATOR_PATH}/bin/clang++${EXE_SUFFIX})
 
-set(OBFUSCATOR_FLAGS "-mllvm -sub -mllvm -sub_loop=1 -mllvm -fla -mllvm -sobf -mllvm -seed=0xdeadbeaf -mllvm -split -mllvm -split_num=2 -mllvm -bcf -mllvm -bcf_prob=10")
+#set(OBFUSCATOR_FLAGS "-mllvm -sub -mllvm -sub_loop=1 -mllvm -fla -mllvm -sobf -mllvm -seed=0xdeadbeaf -mllvm -split -mllvm -split_num=2 -mllvm -bcf -mllvm -bcf_prob=10")
 
 string(APPEND CMAKE_C_FLAGS " ${OBFUSCATOR_FLAGS}")
 string(APPEND CMAKE_CXX_FLAGS " ${OBFUSCATOR_FLAGS}")

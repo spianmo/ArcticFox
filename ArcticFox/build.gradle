@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.kezong.fat-aar'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 31
@@ -44,6 +46,9 @@ android {
             }
         }
     }
+    fataar{
+        transitive = true
+    }
 }
 
 dependencies {
@@ -67,7 +72,7 @@ dependencies {
     api "com.github.PhilJay:MPAndroidChart:v3.1.0"
     api 'com.github.kongzue:DialogX:0.0.43.beta6'
     api 'com.tencent:mmkv-static:1.2.11'
-    implementation project (':Protocol')
+    embed project (path: ':Protocol', configuration: 'default')
     implementation('com.jrummyapps:android-shell:1.0.1@aar') {
         transitive = true;
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -78,8 +83,6 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.12.0'
 }
 
-
-apply plugin: 'maven-publish'
 
 afterEvaluate {
     publishing {
