@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 31
 
     defaultConfig {
-        applicationId "com.kirito.basic"
+        //applicationId "com.kirito.basic"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
@@ -30,7 +30,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
-    applicationVariants.all { variant ->  //module工程则为libraryVariants，主项目则是applicationVariants
+    libraryVariants.all { variant ->  //module工程则为libraryVariants，主项目则是applicationVariants
         variant.javaCompileProvider.get().doLast {
             println("start classes obfuscation " + "${javaCompile.destinationDir}")
             javaexec {
