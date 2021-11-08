@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 add_definitions (-Wno-format-security)
-set(PATCHES_PATH "${CMAKE_CURRENT_LIST_DIR}/patches")
+#[[set(PATCHES_PATH "${CMAKE_CURRENT_LIST_DIR}/patches")
 set(ASSETS_PATH "${CMAKE_CURRENT_LIST_DIR}/binray")
 set(BUILD_TOOLS_PATH "${CMAKE_CURRENT_LIST_DIR}/")
 set(LLVM_OBFUSCATOR_PATH "${BUILD_TOOLS_PATH}/tools/llvm5.0_obfuscator")
@@ -48,7 +48,7 @@ elseif(UNIX)
     message(STATUS "UNIX")
 else()
     message(FATAL_ERROR "OTHER")
-endif()
+endif()]]
 add_library(HostConf SHARED
         src/main/cpp/HostLib.cpp
         src/main/cpp/checksignature.h
