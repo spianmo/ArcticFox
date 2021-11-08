@@ -1,2 +1,2 @@
-rootProject.name = "ArcticFox"
+rootProject.name = "ArcticFox-FrameWork"
 include ':ArcticFox',':Protocol'
