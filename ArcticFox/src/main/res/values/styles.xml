@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <style name="Theme.ArcticFox" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -35,7 +35,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="SettingGroupDivider" parent="@style/AppTheme">
+    <style name="SettingGroupDivider" parent="@style/Theme.ArcticFox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginTop">16dp</item>
